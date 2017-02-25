@@ -47,3 +47,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
+
+
+gem 'nokogiri'
+gem 'rack', '~> 2.0.1'
+gem 'rspec'
+gem 'rspec-rails'
