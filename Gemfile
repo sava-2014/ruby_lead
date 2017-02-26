@@ -72,5 +72,6 @@ end
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'
+  gem 'pg', '0.19.0'
   gem 'byebug',  '9.0.0', platform: :mri
 end
