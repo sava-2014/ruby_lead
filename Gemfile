@@ -67,3 +67,8 @@ gem 'bcrypt'
 
 #gem 'bcrypt-ruby', '3.1.2'
 gem 'sprockets'
+
+group :production do
+  gem 'pg', '0.19.0'
+  gem 'rails_12factor', '~> 0.0.3'
+end
