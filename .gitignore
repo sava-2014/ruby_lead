@@ -18,15 +18,4 @@ doc/
 .DS_Store
 .idea
 .secret
-/db/development.sqlite3
-app/assets/javascripts/users.coffee
-app/assets/stylesheets/users.scss
-app/controllers/users_controller.rb
-app/helpers/users_helper.rb
-app/models/user.rb
-app/views/users/
-db/migrate/
-db/schema.rb
-gem
-spec/
 
