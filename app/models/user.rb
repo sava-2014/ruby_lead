@@ -9,18 +9,9 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }
   has_secure_password
 
-  before_create :create_remember_token
-  def User.new_remember_token
-     SecureRandom.urlsafe_base64
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+        BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
   end
-
-  def User.encrypt(token)
-    Digest::SHA1.hexdigest(token.to_s)
-  end
-
-  private
-
-    def create_remember_token
-      self.remember_token = User.encrypt(User.new_remember_token)
-    end
 end

@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-    @users = User.paginate(page: params[:page])
-  end
-
   def new
     @user = User.new
   end
@@ -11,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-        signin @user
+        log_in @user
         flash[:success] = "Добро пожаловать в Lead Magnet!"
         redirect_to @user
     else
