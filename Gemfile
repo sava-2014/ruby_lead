@@ -8,8 +8,10 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
+gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'rake'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -47,3 +49,26 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
+
+
+gem 'nokogiri'
+gem 'rack', '~> 2.0.1'
+
+gem 'rspec-rails'
+
+
+gem 'rspec', '~> 3.5'
+gem 'bcrypt'
+
+#gem 'bcrypt-ruby', '3.1.2'
+gem 'sprockets'
+
+group :production do
+  gem 'pg', '0.19.0'
+  gem 'rails_12factor', '~> 0.0.3'
+end
