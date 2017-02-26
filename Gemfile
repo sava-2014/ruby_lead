@@ -11,6 +11,7 @@ gem 'rails', '~> 5.0.1'
 gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'rake'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -57,6 +58,12 @@ end
 
 gem 'nokogiri'
 gem 'rack', '~> 2.0.1'
-gem 'rspec'
+
 gem 'rspec-rails'
-gem 'bootstrap-sass'
+
+
+gem 'rspec', '~> 3.5'
+gem 'bcrypt'
+
+#gem 'bcrypt-ruby', '3.1.2'
+gem 'sprockets'
