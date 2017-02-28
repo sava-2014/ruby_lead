@@ -21,3 +21,15 @@ User.create!(name:  "Alexandr Nosikov",
                password:              password,
                password_confirmation: password)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  name        = Faker::Lorem.word
+  description = Faker::Lorem.sentence(50)
+  project     = Faker::Lorem.word
+  price       = Faker::Number.number(3)
+
+  users.each do |user|
+    user.products.create!(name: name, project: project, description: description, price: price)
+  end
+end

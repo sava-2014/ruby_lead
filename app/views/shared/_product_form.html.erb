@@ -1,0 +1,9 @@
+<%= form_for(@product) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field"><%= f.text_area :name, placeholder: "Введите проект продукта" %></div>
+    <div class="field"><%= f.text_area :name, placeholder: "Введите имя продукта" %></div>
+    <div class="field"><%= f.text_area :name, placeholder: "Введите цену продукта" %></div>
+    <div class="field"><%= f.text_area :name, placeholder: "Введите имя продукта" %></div>
+
+    <%= f.submit "Добавить продукт", class: "btn btn-primary" %>
+<% end %>

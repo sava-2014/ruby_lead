@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
 
   root  'static_pages#home'
 
@@ -12,5 +10,8 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :products, only: [:create, :destroy, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
