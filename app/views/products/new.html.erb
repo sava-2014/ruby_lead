@@ -1,2 +1,10 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<% provide(:title, 'Новый продукт') %>
+<% provide(:button_text, 'Создать продукт') %>
+
+<h1>Создание профиля продукта</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= render 'form' %>
+  </div>
+</div>

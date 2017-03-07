@@ -1,6 +1,6 @@
 <% if logged_in? %>
     <div class="row">
-      <aside class="col-md-4">
+      <aside class="col-md-3">
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
@@ -9,10 +9,10 @@
         </section>
       </aside>
 
-      <div class="col-md-8">
-        <h3>Мои продукты (<%= current_user.products.count %>) </h3>
+      <div class="col-md-9">
+        <h3>Мои проекты (<%= current_user.products.count %>) </h3>
 
-        <%= render 'shared/feed' %>
+        <%= render 'shared/feed_product' %>
       </div>
     </div>
 <% else %>

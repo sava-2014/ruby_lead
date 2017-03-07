@@ -1,0 +1,17 @@
+<%= form_for(@products) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label "Название продукта" %>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <%= f.label "Стоимость" %>
+    <%= f.price_field :price, class: 'form-control' %>
+
+    <%= f.label "Описание" %>
+    <%= f.text_field :description, class: 'form-control' %>
+
+    <%= f.label :password_confirmation, "Еще раз" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
