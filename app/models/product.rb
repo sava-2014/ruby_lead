@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many   :target_users
   default_scope -> {order(created_at: :DESC)}
 
   validates :user_id,      presence: true

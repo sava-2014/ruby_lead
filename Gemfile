@@ -70,14 +70,13 @@ gem 'bcrypt'
 
 #gem 'bcrypt-ruby', '3.1.2'
 gem 'sprockets'
+gem 'pg', '0.19.0'
 
 group :production do
-  gem 'pg', '0.19.0'
   gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'
-  gem 'pg', '0.19.0'
   gem 'byebug',  '9.0.0', platform: :mri
 end

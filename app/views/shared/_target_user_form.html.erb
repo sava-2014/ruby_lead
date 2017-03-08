@@ -1,0 +1,8 @@
+<%= form_for(@target_users) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div class="field"><%= f.text_area :target_name, placeholder: "Введите название сегмента" %></div>
+
+
+    <%= f.submit "Добавить сегмент", class: "btn btn-primary" %>
+<% end %>
