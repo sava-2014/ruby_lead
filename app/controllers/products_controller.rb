@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy,:edit]
 
   def create
-    @micropost = current_user.products.build(product_params)
-    if @micropost.save
+    @product = current_user.products.build(product_params)
+    if @product.save
       flash[:success] = "Продукт создан"
       redirect_to root_url
     else
