@@ -1,0 +1,28 @@
+<% provide(:title, @product.name) %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= render 'shared/product_info' %>
+    </section>
+    <section class="micropost_form">
+      <%= render 'shared/target_form' %>
+    </section>
+
+  </aside>
+
+  <div class="col-md-8">
+    <h3>Подробности проекта (<%= @product.name %>) <%=  @product.targets.count %> </h3>
+
+
+
+    <% if @product.targets.any? %>
+        <ol class="microposts">
+          <%= render @targets %>
+        </ol>
+        <%= will_paginate @targets %>
+    <% else %>
+        <h1>У Вас еще нет ЦС</h1>
+    <% end %>
+  </div>
+</div>

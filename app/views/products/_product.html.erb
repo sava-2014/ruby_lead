@@ -1,5 +1,5 @@
 <li id="product-<%= product.id %>">
   <span class="name"><%= product.name %></span>
 
-  <%= link_to "Целевые сегменты", '#', class: "btn btn-small btn-info" %>
+  <%= link_to "Подробнее о проекте", product_path(product.id), class: "btn btn-small btn-info" %>
 </li>

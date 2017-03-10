@@ -1,0 +1,6 @@
+<!-- app/semesters/new.html.erb -->
+<h1> Добавление целевого сегмента </h1>
+<%= form_for @target, url: targets_path do |f| %>
+    <%= f.text_field :target_name %><br>
+    <%= f.submit "Добавить ЦС" %>
+<% end %>

@@ -11,10 +11,9 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, presence: true, allow_nil: true
   has_secure_password
 
-    def feed
+    def product_feed
       Product.where("user_id = ?", id)
     end
-
 
 
     def User.digest(string)
@@ -41,5 +40,6 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_token, nil)
   end
+
 
 end

@@ -1,0 +1,10 @@
+
+<% if @target_feed.any? %>
+    <ol class="products">
+      <%= render @target_feed %>
+    </ol>
+    <%= will_paginate @target_feed %>
+
+<% else %>
+    <h1>У Вас еще нет ЦС</h1>
+<% end %>

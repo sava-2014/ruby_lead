@@ -1,0 +1,8 @@
+<%= form_for @target, :url => { :controller => :targets, :action => :create }, :method => :post do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field"><%= f.text_area :target_name, placeholder: "Введите имя целевого сегмента" %></div>
+    <div class="field"><%= f.text_area :target_base, placeholder: "Определите базовую потребность клиента" %></div>
+
+
+    <%= f.submit "Создать сегмент", class: "btn btn-primary", onclick: cookies[:product_id] = params[:id] %>
+<% end %>

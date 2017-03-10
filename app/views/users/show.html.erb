@@ -1,20 +1,18 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
   <aside class="col-md-3">
     <section class="user_info">
-      <h1><%= @user.name %></h1>
-      <%= gravatar_for @user %>
-
-
+      <%= render 'shared/user_info' %>
+    </section>
+    <section class="micropost_form">
+      <%= render 'shared/product_form' %>
     </section>
   </aside>
+
   <div class="col-md-9">
-    <% if @user.products.any? %>
-        <h3>Кол-во продуктов (<%= @user.products.count %>)</h3>
-        <ol class="products">
-          <%= render @products %>
-        </ol>
-        <%= will_paginate @products %>
-    <% end %>
+    <h3>Мои проекты (<%= current_user.products.count %>) </h3>
+
+    <%= render 'shared/product_feed' %>
   </div>
 </div>

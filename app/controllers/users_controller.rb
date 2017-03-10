@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @products = @user.products.paginate(page: params[:page])
+    @product  = current_user.products.build
+    @feed_items = current_user.product_feed.paginate(page: params[:page])
   end
 
   def new
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
     if @user.save
         log_in @user
         flash[:success] = "Добро пожаловать в Lead Magnet!"
-        redirect_to root_url
+        redirect_to root_path
     else
       render 'new'
     end
