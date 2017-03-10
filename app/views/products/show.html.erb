@@ -1,21 +1,10 @@
 <% provide(:title, @product.name) %>
-
+<h1>Проект "<%= @product.name %>"</h1>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%= render 'shared/product_info' %>
-    </section>
-    <section class="micropost_form">
-      <%= render 'shared/target_form' %>
-    </section>
-
-  </aside>
-
-  <div class="col-md-8">
-    <h3>Подробности проекта (<%= @product.name %>) <%=  @product.targets.count %> </h3>
 
 
-
+  <div class="col-md-2">
+    <h5>Целевой сегмент</h5>
     <% if @product.targets.any? %>
         <ol class="microposts">
           <%= render @targets %>
@@ -24,5 +13,33 @@
     <% else %>
         <h1>У Вас еще нет ЦС</h1>
     <% end %>
+
+    <%= link_to "Добавить сегмент", new_product_target_path(@product), onclick: cookies[:product_id] = params[:id], class: "btn btn-large btn-primary" %>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Ценностные предложения</h5>
+
+    <%= link_to "+ ЦП", '#', class: "btn btn-small btn-primary" %>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Целевые площадки</h5>
+    <%= link_to "+ площадки/методы", '#', class: "btn btn-small btn-primary" %>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Продуктовая линейка</h5>
+    <%= link_to "+ продукт линейки", '#', class: "btn btn-small btn-primary" %>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Профиль продукта</h5>
+    <%= link_to "+ профиль продукта", '#', class: "btn btn-small btn-primary" %>
+  </div>
+
+  <div class="col-md-2">
+    <h5>Упаковка</h5>
+    <%= link_to "Создать упаковку", '#', class: "btn btn-small btn-primary" %>
   </div>
 </div>

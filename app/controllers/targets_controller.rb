@@ -1,14 +1,12 @@
 class TargetsController < ApplicationController
 
   def new
-
-    #@product = Product.find(params[:id])
-    #@target = @product.targets.build
     @target = Target.new
   end
 
   def create
     @product = Product.find(cookies[:product_id])
+    cookies[:product_id] = ''
     @target = @product.targets.build(target_params)
     if @target.save
       redirect_to product_path(@product)

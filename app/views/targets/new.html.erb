@@ -1,6 +1,12 @@
-<!-- app/semesters/new.html.erb -->
-<h1> Добавление целевого сегмента </h1>
-<%= form_for @target, url: targets_path do |f| %>
-    <%= f.text_field :target_name %><br>
-    <%= f.submit "Добавить ЦС" %>
+<%= form_for @target do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field"><%= f.text_area :target_name,        placeholder: "Введите имя целевого сегмента" %></div>
+    <div class="field"><%= f.text_area :target_base,        placeholder: "Определите базовую потребность клиента" %></div>
+    <div class="field"><%= f.text_area :target_traditional, placeholder: "Традиционное решение используемое для решения проблемы" %></div>
+    <div class="field"><%= f.text_area :target_minus,       placeholder: "Недостатки традиционных решений" %></div>
+    <div class="field"><%= f.text_area :target_criteria,    placeholder: "Критерий принятия решения о покупке" %></div>
+    <div class="field"><%= f.text_area :target_decision,    placeholder: "Наше решение" %></div>
+    <div class="field"><%= f.text_area :target_advantages,  placeholder: "Наши приемущества" %></div>
+
+    <%= f.submit "Создать сегмент", class: "btn btn-primary" %>
 <% end %>
